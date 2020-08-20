@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 // import items from './data';
 import Client from './contentful';
-import { createClient } from 'contentful';
 
 const RoomContext = React.createContext();
 
-// Client.getEntries()
-//     .then(res => console.log(res.items));
 
 
 class RoomProvider extends Component {
@@ -33,11 +30,8 @@ class RoomProvider extends Component {
                 Client.getEntries({
                     order: 'sys.createdAt'
                 })
-            console.log(res.items);
             let rooms = this.formatData(res.items);
-            console.log(rooms)
             let featuredRooms = rooms.filter(room => room.features === true);
-            console.log(featuredRooms);
             let maxPrice = Math.max(...rooms.map(room => room.price));
             let maxSize = Math.max(...rooms.map(room => room.size));
 
@@ -95,7 +89,7 @@ class RoomProvider extends Component {
     }
 
     filterrooms = () => {
-        let { rooms, type, capacity, price, maxPrice, minPrice, maxSize, minSize, breakfast, pets } = this.state;
+        let { rooms, type, capacity, price, maxSize, minSize, breakfast, pets } = this.state;
 
         let tempRooms = [...rooms];
         // transform

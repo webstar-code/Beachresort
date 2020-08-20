@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Banner from '../Components/Banner';
 import { Link } from 'react-router-dom';
 import { RoomContext } from '../context';

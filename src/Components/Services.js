@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Titles from './Titles';
 
 import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from 'react-icons/fa';
@@ -27,14 +27,13 @@ const Services = () => {
         }
     ]
 
-    const [state, setstate] = useState(services);
 
     return (
         <>
             <div className="services">
                 <Titles title="services" />
                 <div className="services-center">
-                    {state.map((item, index) => {
+                    {services.map((item, index) => {
                         return (
                             <article className="service" key={index}>
                                 <span>{item.icon}</span>

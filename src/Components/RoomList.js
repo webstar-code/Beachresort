@@ -3,7 +3,6 @@ import Room from '../Components/Room';
 
 const RoomList = (props) => {
   const { rooms } = props;
-  console.log(rooms);
 
   return(
     <>
